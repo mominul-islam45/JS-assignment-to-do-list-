@@ -2,6 +2,8 @@ const input = document.getElementById('todoText');
 const add = document.getElementById('todoAdd');
 const ul = document.getElementById('todoList');
 
+let items = 0;
+
 function addTodo() {
     if (input.value.trim() === ''){
         alert('Please enter a task!');
@@ -10,12 +12,25 @@ function addTodo() {
     else{
         let li = document.createElement('li')
 
-        let textSpan = document.createElement('span');
-        textSpan.textContent = input.value;
+        let output = document.createElement('span');
+        output.textContent = input.value;
 
-        li.appendChild(textSpan)
+        let deleteBtn = document.createElement('button')
+        deleteBtn.id = `delete${items}`;
+        deleteBtn.textContent = 'Delete';
+        deleteBtn.onclick = function(){
+            deleteTodo(deleteBtn);
+        }
+
+        li.appendChild(output)
+        li.appendChild(deleteBtn)
         ul.appendChild(li)
 
         input.value = '';
+        items++;
     }
+}
+
+function deleteTodo(btn){
+    ul.removeChild(btn.parentElement);
 }
