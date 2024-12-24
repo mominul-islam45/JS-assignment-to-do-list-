@@ -20,13 +20,13 @@
                 
                 <div class="flex gap-x-4">
                     <input type="text" id="todoText" placeholder="Enter your task" class="outline-none caret-red-500 w-full">
-                    <button type="button" id="todoAdd" class="bg-red-500 text-white text-2xl w-20 h-12 rounded-md hover:bg-red-400 active:bg-red-500 transition-colors"><i class="fa-solid fa-plus"></i></button>
+                    <button type="button" id="todoAdd" onclick="addTodo()" class="bg-red-500 text-white text-2xl w-20 h-12 rounded-md hover:bg-red-400 active:bg-red-500 transition-colors"><i class="fa-solid fa-plus"></i></button>
                 </div>
             </form>
 
-            <div id="todoList">
+            <ul id="todoList">
 
-            </div>
+            </ul>
         </div>
     </section>
 
