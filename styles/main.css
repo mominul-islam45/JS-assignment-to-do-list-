@@ -5,18 +5,25 @@
 @tailwind components;
 @tailwind utilities;
 
+.background-pattern{
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%231f515d' fill-opacity='0.15'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
 .todo-item{
-    @apply bg-red-500 max-w-lg mx-auto text-white rounded-lg shadow-md shadow-red-300 mt-4 even:bg-violet-500 even:shadow-violet-300 py-4 px-6 grid grid-cols-2 grid-rows-2 gap-4 place-items-center;
+    @apply bg-red-500 max-w-lg mx-auto text-white rounded-lg shadow-md shadow-red-300 mt-4 even:bg-violet-500 even:shadow-violet-300 py-4 px-6 grid grid-cols-3 grid-rows-2 gap-4 place-items-center;
 }
 .todo-output{
-    @apply text-white text-xl font-normal row-span-2 self-center;
+    @apply text-white text-xl font-normal col-span-3 self-center;
 }
-.todo-output-edit{
-    @apply bg-transparent text-white text-xl font-normal outline-none border-b-2 border-white row-span-2 self-center;
+.todo-output-edited{
+    @apply bg-transparent text-white text-xl font-normal outline-none border-b-2 border-white col-span-3 w-full;
 }
 .edit-btn{
-    @apply bg-yellow-300 text-slate-800 text-xl w-16 h-10 rounded-md hover:bg-yellow-400 active:bg-yellow-300 transition-colors
+    @apply bg-yellow-300 text-slate-800 text-xl w-16 h-10 rounded-md hover:bg-yellow-400 hover:text-2xl active:bg-yellow-300 transition-colors duration-200
 }
 .delete-btn{
-    @apply bg-white text-slate-700 text-xl w-16 h-10 rounded-md hover:text-red-500 active:text-slate-700 transition-colors
+    @apply bg-white text-slate-700 text-xl w-16 h-10 rounded-md hover:text-red-500 hover:text-2xl active:text-slate-700 transition-colors duration-200
+}
+.done-btn{
+    @apply bg-white text-green-500 text-xl w-16 h-10 rounded-md hover:text-green-600 hover:text-2xl active:text-green-500 transition-colors duration-200
 }
