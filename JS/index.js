@@ -21,7 +21,7 @@ function addTodo() {
         editBtn.type = 'button';
         editBtn.id = 'edit${items}';
         editBtn.className = 'edit-btn';
-        editBtn.textContent = 'Edit';
+        editBtn.innerHTML = '<i class="fa-solid fa-pen-to-square"></i>';
         editBtn.onclick = function(){
             editTodo(output, editBtn)
         }
@@ -29,7 +29,7 @@ function addTodo() {
         let deleteBtn = document.createElement('button')
         deleteBtn.id = 'delete${items}';
         deleteBtn.className = 'delete-btn';
-        deleteBtn.textContent = 'Delete';
+        deleteBtn.innerHTML = '<i class="fa-solid fa-trash-can"></i>';
         deleteBtn.onclick = function(){
             deleteTodo(deleteBtn);
         }
@@ -56,13 +56,13 @@ function editTodo(output, editBtn){
         newInput.className = 'todo-output-edit';
         newInput.value = output.textContent;
         output.replaceWith(newInput);
-        editBtn.textContent = 'Save';
+        editBtn.innerHTML = '<i class="fa-solid fa-floppy-disk"></i>';
         editBtn.type = 'submit';
     }
     else{  
         output.textContent = editBtn.previousSibling.value;
         editBtn.previousSibling.replaceWith(output);
-        editBtn.textContent = 'Edit';
+        editBtn.innerHTML = '<i class="fa-solid fa-pen-to-square"></i>';
         editBtn.type = 'button';
     }
 }
