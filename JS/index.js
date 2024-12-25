@@ -11,9 +11,10 @@ function addTodo() {
     }
     else{
         let li = document.createElement('li')
+        li.className = 'todo-item';
 
         let output = document.createElement('span');
-        li.className = 'todo-item';
+        output.className = 'todo-output';
         output.textContent = input.value;
 
         let editBtn = document.createElement('button')
@@ -52,6 +53,7 @@ function editTodo(output, editBtn){
     if(editBtn.type === 'button'){
         let newInput = document.createElement('input');
         newInput.type = 'text';
+        newInput.className = 'todo-output-edit';
         newInput.value = output.textContent;
         output.replaceWith(newInput);
         editBtn.textContent = 'Save';
